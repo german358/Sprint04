@@ -3,7 +3,7 @@ const productoSchema = require('../schemas/productoSchema');
 
 
 
-router.get('/ecommerce/producto/getall',(req,res) => {
+router.get('/antojos/producto/getall',(req,res) => {
     try{
         productoSchema.find().populate('categoriaid').exec((err,data) => {
             if(err){

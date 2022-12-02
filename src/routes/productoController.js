@@ -8,7 +8,7 @@ require('dotenv').config();
 //Router
 const productoRouter = express.Router();
 
-//Retorna todas las categorias
+//Retorna todas los productos
 productoRouter.get('/producto/getall',(req,res) => {
     try{
         productoSchema.find().populate('categoriaid').exec((err,data) => {
@@ -40,7 +40,7 @@ productoRouter.get('/producto/getall',(req,res) => {
 })
 
 
-//Crear una categoria
+//Crear un producto
 productoRouter.post('/producto/create',async (req,res) => {
         //Mapear el esquema recibido en el request, con el esquema de mongoDB
         const newProducto = productoSchema(req.body);
